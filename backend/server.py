@@ -506,10 +506,13 @@ async def dashboard_stats(user: dict = Depends(get_current_user)):
 # ---------------------------------------------------------------------------
 @app.on_event("startup")
 async def on_start():
-    await db.users.create_index("email", unique=True)
-    await db.projects.create_index("owner_id")
-    await db.tasks.create_index("project_id")
-    await db.tasks.create_index("assignee_id")
+    try:
+        await db.users.create_index("email", unique=True)
+        await db.projects.create_index("owner_id")
+        await db.tasks.create_index("project_id")
+        await db.tasks.create_index("assignee_id")
+    except Exception as e:
+        log.warning("Index creation skipped: %s", e)
 
     # Seed admin
     admin_email = os.environ.get("ADMIN_EMAIL", "admin@taskflow.com").lower()
