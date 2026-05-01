@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f7f7f5;
+    color: #0f1014;
+}
+
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+    :root {
+        --background: 40 20% 97%;
+        --foreground: 220 15% 8%;
+        --card: 0 0% 100%;
+        --card-foreground: 220 15% 8%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 15% 8%;
+        --primary: 155 65% 24%;
+        --primary-foreground: 60 30% 98%;
+        --secondary: 40 12% 92%;
+        --secondary-foreground: 220 15% 12%;
+        --muted: 40 12% 94%;
+        --muted-foreground: 220 8% 42%;
+        --accent: 40 30% 90%;
+        --accent-foreground: 220 15% 12%;
+        --destructive: 0 70% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 40 8% 88%;
+        --input: 40 8% 88%;
+        --ring: 155 65% 24%;
+        --radius: 0.625rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Subtle, humanized touches */
+.app-grid-bg {
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(15, 16, 20, 0.06) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+.card-soft {
+    background: #ffffff;
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+}
+
+/* tiny scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #d8d6d0; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #c1beb4; }

@@ -1,0 +1,63 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Build output
+frontend/build/
+frontend/.next/
+dist/
+
+# Env files (never commit secrets)
+.env
+.env.local
+.env.production
+backend/.env
+frontend/.env
+
+# Logs
+*.log
+logs/
+.yarn-error.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Test output
+/app/test_reports/
+coverage/
+.pytest_cache/
+-e 
+# Environment and credential files
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials
+-e 
+# Environment and credential files
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials
+-e 
+# Environment and credential files
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials
